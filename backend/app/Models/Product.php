@@ -5,19 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
+use Throwable;
 
-class Category extends Model
+class Product extends Model
 {
     use HasFactory, HasUuids;
 
     protected $fillable = [
         'name',
+        'amount',
+        'price',
+        'image',
+        'category_id',
     ];
-
-    public function product()
-    {
-        return $this->hasMany(Product::class, 'category_id', 'id');
-    }
 
     public function category()
     {
@@ -26,10 +27,12 @@ class Category extends Model
 
     protected static function booted()
     {
-        self::deleting(function (Category $category) {
-            $category->product()->each(function ($product) {
-                $product->delete();
-            });
+        self::deleted(function (Product $product) {
+            try {
+                $image_name = explode('products/', $product['image']);
+                Storage::disk('public')->delete('products/'.$image_name[1]);
+            } catch (Throwable) {
+            }
         });
     }
 }

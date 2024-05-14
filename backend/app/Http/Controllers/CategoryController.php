@@ -6,6 +6,7 @@ use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 class CategoryController extends Controller
 {
@@ -23,7 +24,7 @@ class CategoryController extends Controller
     {
         $category = $this->category->all();
 
-        return response()->json($category);
+        return response()->json($category, Response::HTTP_OK);
 
     }
 
@@ -35,7 +36,7 @@ class CategoryController extends Controller
         $data = $request->validated();
         $category = $this->category->create($data);
 
-        return response()->json($category);
+        return response()->json($category, Response::HTTP_CREATED);
     }
 
     /**
@@ -45,7 +46,7 @@ class CategoryController extends Controller
     {
         $category = $this->category->findOrFail($id);
 
-        return response()->json($category);
+        return response()->json($category, Response::HTTP_OK);
     }
 
     /**
@@ -57,7 +58,7 @@ class CategoryController extends Controller
         $category = $this->category->findOrFail($id);
         $category->update($data);
 
-        return response()->json($category);
+        return response()->json($category, Response::HTTP_OK);
     }
 
     /**
@@ -68,6 +69,6 @@ class CategoryController extends Controller
         $category = $this->category->findOrFail($id);
         $category->delete();
 
-        return response()->json('Categoria deletada com sucesso.');
+        return response()->json([], Response::HTTP_NO_CONTENT);
     }
 }

@@ -1,0 +1,53 @@
+.productspage{
+    --light: white;
+    --dark: black;
+    --grey: grey;
+    --first: rgb(19, 31, 107);
+    --second: rgb(100, 43, 107);
+    --third: #2a0467;
+    --forth: #110458;
+    --fifth: #0f05a000;
+    --sixth: #65429c;
+    --seventh: #9e4784;
+    --eigth: #37306b;
+    --ninth: rgba(3, 0, 61, 1);
+    --tenth: rgba(50, 0, 57, 1);
+    --eleventh: #fdbeff;
+    --twelfth: rgb(12, 6, 117);
+    --thirteenth: rgb(65, 11, 115);
+}
+
+.productspage{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* font-family: "Ubuntu", sans-serif; */
+    color: var(--light);
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(179.4deg, var(--first) -16.9%, var(--second) 119.9%) no-repeat fixed;
+
+}
+
+.wrapper {
+    margin: 2rem;
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 10rem));
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+@media screen and (max-width: 800px) {
+    .wrapper {
+        grid-template-columns: repeat(4, minmax(10rem, 1fr)); /* Alterar para 4 colunas para telas entre 800px e 660px */
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .wrapper{
+        grid-template-columns: 1fr;
+    }
+}
