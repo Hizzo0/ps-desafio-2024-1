@@ -1,12 +1,14 @@
 .productspage{
     --light: white;
     --dark: black;
+    --text: #11091e;
+    --fundo: #f4f1fb;
     --grey: grey;
-    --first: rgb(19, 31, 107);
-    --second: rgb(100, 43, 107);
-    --third: #2a0467;
-    --forth: #110458;
-    --fifth: #0f05a000;
+    --first: #0d0211ff;
+    --second:  #071623ff;
+    --third: #98c1d9ff;
+    --forth: #a61c3cff;
+    --fifth: #475841ff;
     --sixth: #65429c;
     --seventh: #9e4784;
     --eigth: #37306b;
@@ -17,6 +19,7 @@
     --thirteenth: rgb(65, 11, 115);
 }
 
+
 .productspage{
     display: flex;
     flex-direction: column;
@@ -24,11 +27,10 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* font-family: "Ubuntu", sans-serif; */
     color: var(--light);
     height: 100%;
     width: 100%;
-    background: linear-gradient(179.4deg, var(--first) -16.9%, var(--second) 119.9%) no-repeat fixed;
+    background: var(--second)
 
 }
 

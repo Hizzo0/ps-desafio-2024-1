@@ -17,6 +17,7 @@ return new class extends Migration
             $table->unsignedInteger('amount');
             $table->double('price');
             $table->string('image');
+            $table->boolean('status');
             $table->foreignUuid('category_id')->on('categories');
             $table->timestamps();
         });

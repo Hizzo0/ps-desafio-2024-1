@@ -6,6 +6,7 @@ export type productType = {
   amount: number
   price: number
   image: string
+  status: boolean
   category_id: string
   category: categoryType
   created_at: Date

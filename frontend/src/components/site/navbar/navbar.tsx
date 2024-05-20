@@ -11,7 +11,7 @@ export default function Navbar({ logo }: NavbarProps) {
     <nav className={style.navbar}>
       <div className={style.navbar_nav}>
         <a href="#">
-          <img className={style.logo} src={logo} alt="" />
+          <img className={style.logo} src={logo} alt="Logo" />
         </a>
         <ul className={style.nav_links}>
           <li className={style.nav_item}>
@@ -32,11 +32,6 @@ export default function Navbar({ logo }: NavbarProps) {
           <li className={style.nav_item}>
             <a href="#" className={style.icon_button}>
               Nossa história
-            </a>
-          </li>
-          <li className={style.nav_item}>
-            <a href="#" className={style.icon_button}>
-              {isAuth ? 'Logado' : 'Sign-in'}
             </a>
           </li>
         </ul>

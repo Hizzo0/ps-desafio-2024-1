@@ -19,9 +19,10 @@ class ProductFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'amount' => $this->faker->randomNumber(),
-            'price' => $this->faker->randomFloat(2, 0, 1000000),
+            'amount' => $this->faker->randomNumber(1, 50),
+            'price' => $this->faker->randomFloat(2, 0, 10000),
             'image' => $this->faker->imageUrl(),
+            'status' => 1,
             'category_id' => fn () => Category::factory()->create()->id,
         ];
     }

@@ -1,72 +1,81 @@
-.card{
-    box-shadow: 0 0 10px 5px rgba(red, green, blue, 0.4);
-    border-radius: 10px;
-    min-height: 15vh;
-    min-width: 16vh;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+.card {
+    border: 1px solid var(--second);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--first);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    margin: 16px;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
 }
 
-.card_img{
-    border-radius: 10px 10px 0 0;
-    object-fit: cover;
+.card_img_container {
     width: 100%;
-    height: 12rem;
+    overflow: hidden;
 }
 
-.card_body{
-    border-radius: 0 0 10px 10px;
-    text-align: center;
+.card_img {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(179.4deg, var(--first) -16.9%, var(--secound) 119.9%) no-repeat fixed;
+    height: auto;
+    transition: transform 0.3s ease;
 }
 
-.card_name{
-    font-size: 20px;
+.card_body {
+    text-align: center;
+    padding: 16px;
 }
 
-.card_category, .card_amount{
-    font-size: 16px;
+.card_name {
+    font-size: 1.5em;
+    margin-bottom: 8px;
 }
 
-.card_name, .card_category, .card_amount{
-    line-height: 100%;
-    margin: 1vh 0;
+.card_category, 
+.card_amount, 
+.card_price, 
+.card_status {
+    font-size: 1em;
+    margin-bottom: 4px;
 }
 
-@media screen and (max-width: 660px) {
-    .card{
-        flex-direction: row;
-        width: 90vw;
-        height: fit-content;
-        max-height: 160px;
-        min-height: 100px;
-    }
-    
-    .card_img{
-        border-radius: 10px 0 0 10px;
-        max-width: 35vw;
-        height: auto;
-    }
-    
-    .card_body{
-        border-radius: 0 10px 10px 0;
-        max-height: none;
-    }
-
+.card_btn {
+    margin-top: 16px;
 }
 
-@media screen and (max-width: 400px) {
-    .card_name{
-        font-size: 20px;
-    }
-    
-    .card_category, .card_amount{
-        font-size: 13px;
-    }
-    
+.card_btn2 {
+    background-color: var(--fifth);
+    color: var(--ligth);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+}
 
+.card_btn2_disabled {
+    background-color: var(--fifth);
+    color: #aaa;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: not-allowed;
+    transition: transform 0.5s ease-in-out;
+}
+
+.card_paragraph {
+    font-size: 1em;
+    color: #666;
+}
+
+.card_img:hover {
+    transform: scale(1.1);
+}
+
+.card_btn2:hover {
+    transform: scale(1.1);
+}
+
+.card:hover {
+    transform: scale(1.1);
 }

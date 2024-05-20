@@ -21,10 +21,11 @@ Route::middleware(['auth:sanctum', 'can:admin'])->group(function () {
 
 });
 
-Route::get('categories', [CategoryController::class, 'index']);
-Route::get('categories/{id}', [CategoryController::class, 'show']);
-Route::get('products', [ProductController::class, 'index']);
-Route::get('products/{id}', [ProductController::class, 'show']);
+Route::get('/categories', [CategoryController::class, 'index']);
+Route::get('/categories/{id}', [CategoryController::class, 'show']);
+Route::get('/products', [ProductController::class, 'index']);
+Route::get('/products/{id}', [ProductController::class, 'show']);
+Route::post('/inactiveProduct/{id}', [ProductController::class, 'updateStatus']);
 
 Route::get('/', function () {
     return ['Laravel' => app()->version()];

@@ -1,0 +1,54 @@
+/* style.module.css */
+  
+  .navbar {
+    height: 60px;
+    background: var(--first); 
+    border-bottom: 1.5px solid var(--grey);
+    z-index: 1000;
+  }
+  
+  .navbar_nav {
+    display: flex;
+    max-width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+    margin-right: 1px;
+  }
+  
+  .nav_links {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .logo {
+    position: absolute;
+    left: 1vw;
+    height: 50px;
+    margin: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .nav_item {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto 15px auto 25px;
+  }
+  
+  .nav_item > a {
+    display: block;
+    font-size: 18px;
+    color: var(--secondary); /* Branco */
+    padding: 10px 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 0px;
+
+  }
+  
+  .nav_item> a:hover, .logo:hover {
+    transform: scale(1.1);
+  }
+  

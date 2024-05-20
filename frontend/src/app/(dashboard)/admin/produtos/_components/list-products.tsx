@@ -40,6 +40,7 @@ export default async function ListProduct() {
               <TableHead>Categoria</TableHead>
               <TableHead>Quantidade</TableHead>
               <TableHead>Preço</TableHead>
+              <TableHead>Status</TableHead>
               <TableHead className="text-right">Ações</TableHead>
             </TableRow>
           </TableHeader>
@@ -53,6 +54,7 @@ export default async function ListProduct() {
                 <TableCell>{product.category.name}</TableCell>
                 <TableCell>{product.amount}</TableCell>
                 <TableCell>{product.price}</TableCell>
+                <TableCell>{product.status}</TableCell>
                 <TableCell className="flex justify-end">
                   <DialogInformationProduct product={product}>
                     <Button variant="ghost" size="icon">

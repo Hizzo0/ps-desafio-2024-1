@@ -89,4 +89,13 @@ class ProductController extends Controller
 
         return response()->json([], Response::HTTP_NO_CONTENT);
     }
+
+    public function updateStatus($id)
+    {
+        $product = $this->product->findOrFail($id);
+        $product->update(['status' => 0]);
+
+        return response()->json($product, Response::HTTP_OK);
+
+    }
 }

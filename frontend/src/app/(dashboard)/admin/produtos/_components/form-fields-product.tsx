@@ -110,6 +110,39 @@ export default function FormFieldsProduct({
           />
         </FormField>
         <FormField>
+          <Label htmlFor="status" required={!product}>
+            Status
+          </Label>
+          <div>
+            <div>
+              <Label htmlFor="status">Comprado</Label>
+              <Input
+                type="radio"
+                name="status"
+                id="status"
+                value={0}
+                defaultChecked={!product?.status}
+                disabled={pending}
+                readOnly={readOnly}
+                error={error?.errors?.status}
+              ></Input>
+            </div>
+            <div>
+              <Label htmlFor="status">Comprar</Label>
+              <Input
+                type="radio"
+                name="status"
+                id="status"
+                value={1}
+                defaultChecked={!product?.status}
+                disabled={pending}
+                readOnly={readOnly}
+                error={error?.errors?.status}
+              ></Input>
+            </div>
+          </div>
+        </FormField>
+        <FormField>
           <Label htmlFor="category_id" required={!product}>
             Categoria
           </Label>
