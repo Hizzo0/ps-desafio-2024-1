@@ -26,6 +26,7 @@ Route::get('/categories/{id}', [CategoryController::class, 'show']);
 Route::get('/products', [ProductController::class, 'index']);
 Route::get('/products/{id}', [ProductController::class, 'show']);
 Route::post('/inactiveProduct/{id}', [ProductController::class, 'updateStatus']);
+Route::post('/decreaseAmount/{id}', [ProductController::class, 'updateAmount']);
 
 Route::get('/', function () {
     return ['Laravel' => app()->version()];

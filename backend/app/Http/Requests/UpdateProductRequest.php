@@ -23,7 +23,8 @@ class UpdateProductRequest extends FormRequest
     {
         return [
             'name' => 'sometimes|min:2|max:80',
-            'quantity' => 'sometimes|min:0',
+            'quantity' => 'sometimes',
+            'amount' => 'sometimes',
             'price' => 'sometimes',
             'image' => 'sometimes',
             'status' => 'sometimes',

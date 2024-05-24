@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreProductRequest;
+use App\Http\Requests\StoreProductRequest; // Importe a classe Request corretamente
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\Response;
 use Throwable;
@@ -43,7 +44,6 @@ class ProductController extends Controller
         $product_category = $product->with('category')->findOrFail($id);
 
         return response()->json($product_category, Response::HTTP_CREATED);
-
     }
 
     /**
@@ -96,6 +96,19 @@ class ProductController extends Controller
         $product->update(['status' => 0]);
 
         return response()->json($product, Response::HTTP_OK);
+    }
 
+    public function updateAmount($id, Request $request)
+    {
+        $product = $this->product->findOrFail($id);
+        $quantityToDecrease = $request->input('quantity', 1); // Quantidade padrão é 1 se não for passada
+
+        if ($product->amount >= $quantityToDecrease) {
+            $product->update(['amount' => $product->amount - $quantityToDecrease]);
+
+            return response()->json($product, Response::HTTP_OK);
+        } else {
+            return response()->json(['message' => 'Quantidade insuficiente do produto'], Response::HTTP_BAD_REQUEST);
+        }
     }
 }
