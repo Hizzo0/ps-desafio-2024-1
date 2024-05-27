@@ -1,12 +1,12 @@
-'use client'
-
 import style from './style.module.css'
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
 
 export default function Footer() {
   return (
+    // Componente de rodapé
     <footer className={style.footer}>
       <div className={style.footer_content}>
+        {/* Seção "Sobre nós" */}
         <div className={style.footer_section}>
           <h3>Sobre nós</h3>
           <div className="p">
@@ -20,6 +20,7 @@ export default function Footer() {
             </p>
           </div>
         </div>
+        {/* Seção "Siga-nos nas Redes Sociais" */}
         <div className={style.footer_section}>
           <h3>Siga-nos nas Redes Sociais</h3>
           <div className={style.social_icons}>
@@ -34,6 +35,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
+        {/* Seção "Contato" */}
         <div className={style.footer_section}>
           <h3>Contato</h3>
           <div className="p">
@@ -45,6 +47,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      {/* Rodapé inferior */}
       <div className={style.footer_bottom}>
         <p>&copy; 2024 VascOnline. Todos os direitos reservados.</p>
       </div>

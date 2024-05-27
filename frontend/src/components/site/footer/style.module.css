@@ -1,60 +1,82 @@
+/* Estilo geral do rodapé */
 .footer {
-    background-color: var(--dark);
-    color: var(--light);
-    padding: 20px 0;
-  }
-  
-  .footer_content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 20px;
-  }
-  
-  .footer_section {
-    flex: 1;
-    margin: 10px;
-  }
-  
-  .footer_section h3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .p{
-    display: flex;
-    align-items: center;
-  }
+  background-color: var(--dark);
+  color: var(--third);
+  padding: 20px 0;
+}
 
-  .footer_section p, .footer_section a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px 0;
-  }
-  
-  .social_icons {
-    display: flex;
-    gap: 10px;
-    justify-content: space-evenly;
-    
-  }
-  
-  .social_icons a {
-    color: var(--forth);
-    font-size: 24px;
-    transition: color 0.3s;
-  }
-  
-  .social_icons a:hover {
-    color: var(--light);
-  }
-  
-  .footer_bottom {
-    text-align: center;
-    padding: 10px 0;
-    border-top: 1px solid var(--forth);
-  }
-  
+/* Estilo do rodapé em modo escuro */
+.footer.darkMode {
+  background-color: #333;
+  color: var(--forth);
+}
+
+/* Layout e espaçamento do conteúdo do rodapé */
+.footer_content {
+  margin: 0 15vh;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+/* Estilo de cada seção do rodapé */
+.footer_section {
+  flex: 1;
+  margin: 10px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo dos títulos das seções do rodapé */
+.footer_section h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  color: var(--light);
+}
+
+/* Estilo dos parágrafos e links nas seções do rodapé */
+.footer_section p,
+.footer_section a {
+  display: flex;
+  text-align: justify;
+  margin: 5px 0;
+  color: var(--light);
+}
+
+/* Estilo das informações de contato */
+.contact_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Estilo dos ícones sociais */
+.social_icons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* Estilo dos links dos ícones sociais */
+.social_icons a {
+  color: var(--forth);
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+/* Estilo dos links dos ícones sociais ao passar o mouse */
+.social_icons a:hover {
+  color: var(--third);
+}
+
+/* Estilo da parte inferior do rodapé */
+.footer_bottom {
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid var(--forth);
+  color: var(--light);
+}

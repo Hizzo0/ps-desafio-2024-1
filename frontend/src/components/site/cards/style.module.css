@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+/* Importando fontes */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Estilos para o contêiner de cartões */
 .card-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -9,7 +10,9 @@
   justify-items: center;
 }
 
+/* Estilos para os cartões */
 .card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   text-align: center;
   border: 1px solid var(--second);
   border-radius: 12px;
@@ -22,11 +25,19 @@
   margin: 20px;
 }
 
+/* Modo escuro para os cartões */
+.card.darkMode {
+  background-color: #333;
+  border-color: #fff;
+}
+
+/* Estilos ao passar o mouse sobre o cartão */
 .card:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Contêiner da imagem do cartão */
 .card_img_container {
   width: 100%;
   height: 200px;
@@ -36,6 +47,7 @@
   border-top-right-radius: 12px;
 }
 
+/* Estilos para a imagem do cartão */
 .card_img {
   width: 100%;
   height: 100%;
@@ -44,14 +56,14 @@
   position: absolute;
   top: 0;
   left: 0;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
 }
 
+/* Efeito ao passar o mouse sobre a imagem do cartão */
 .card_img:hover {
   transform: scale(1.5);
 }
 
+/* Contêiner de conteúdo do cartão */
 .card_content {
   display: flex;
   flex-direction: column;
@@ -60,28 +72,41 @@
   justify-content: space-between;
 }
 
+/* Informações do cartão */
 .card_info {
   margin-bottom: 16px;
 }
 
+/* Nome do cartão */
 .card_name {
   font-weight: bold;
-  font-family: "Playfair Display", serif;
+  font-family: "Montserrat", serif;
   color: var(--forth);
   font-size: 1.5em;
   margin-bottom: 8px;
 }
 
+/* Modo escuro para o nome do cartão */
+.card_name.darkMode {
+  color: #fff;
+}
+
+/* Categoria do cartão */
 .card_category {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-family: "Montserrat", sans-serif;
   color: var(--forth);
   font-size: 1em;
   margin-bottom: 4px;
 }
 
+/* Modo escuro para a categoria do cartão */
+.card_category.darkMode {
+  color: #fff;
+}
+
+/* Contêineres de quantidade e categoria */
 .quantity_container,
 .category_container {
   color: var(--forth);
@@ -91,16 +116,19 @@
   justify-content: space-evenly;
 }
 
+/* Ícones de quantidade e categoria */
 .quantity_icon,
 .category_icon {
   color: var(--forth);
   margin-right: 5px;
 }
 
+/* Ícone de compra */
 .buy_icon {
   margin-top: 10px;
 }
 
+/* Preço do cartão */
 .card_price {
   font-family: "Montserrat", sans-serif;
   font-size: 1.2em;
@@ -109,6 +137,12 @@
   margin-bottom: 8px;
 }
 
+/* Modo escuro para o preço do cartão */
+.card_price.darkMode {
+  color: #fff;
+}
+
+/* Botões do cartão */
 .card_buttons {
   display: flex;
   flex-direction: row;
@@ -116,6 +150,7 @@
   justify-content: space-evenly;
 }
 
+/* Contêiner de quantidade e botão de compra */
 .card_buy_quantity_wrapper {
   color: var(--forth);
   display: flex;
@@ -124,6 +159,7 @@
   margin-bottom: 8px;
 }
 
+/* Botão de quantidade */
 .quantity_btn {
   color: var(--forth);
   border: none;
@@ -134,12 +170,14 @@
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+/* Efeito ao passar o mouse sobre o botão de quantidade */
 .quantity_btn:hover {
   transform: scale(1.1);
   background-color: var(--forth);
   color: var(--second);
 }
 
+/* Botão de ação no cartão */
 .card_btn2 {
   background-color: var(--forth);
   color: var(--second);
@@ -153,16 +191,19 @@
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+/* Botão desabilitado */
 .card_btn2:disabled {
   background-color: grey;
   cursor: not-allowed;
 }
 
+/* Efeito ao passar o mouse sobre o botão de ação */
 .card_btn2:hover {
-  background-color: var(--first);
+  background-color: var(--forth);
   transform: scale(1.1);
 }
 
+/* Contêiner de compra */
 .buy_content {
   display: flex;
   align-items: center;
@@ -170,10 +211,16 @@
   width: 100%;
 }
 
+/* Ícone de compra */
 .buy_icon {
   margin-left: 5px;
 }
 
+
+
+
+
+/* Estilo para itens fora de estoque */
 .out_of_stock {
   background-color: var(--forth);
   color: var(--second);
@@ -189,15 +236,19 @@
   width: 100%;
 }
 
+/* Efeito ao passar o mouse em itens fora de estoque */
 .out_of_stock:hover {
   background-color: var(--forth);
-  transform: scale(1)
+  transform: scale(1);
 }
 
+/* Texto de itens fora de estoque */
 .out_of_stock span {
   color: gray;
   text-align: center;
 }
+
+/* Estilos responsivos para telas menores */
 @media (max-width: 1200px) {
   .card-container {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -247,28 +298,5 @@
   .card-container {
     grid-template-columns: 1fr;
     gap: 16px;
-  }
-
-  .card {
-    margin: 8px;
-  }
-
-  .card_name {
-    font-size: 1em;
-  }
-
-  .card_category,
-  .card_price {
-    font-size: 0.8em;
-  }
-
-  .quantity_btn {
-    padding: 4px;
-    margin: 0 2px;
-  }
-
-  .card_btn2 {
-    padding: 8px;
-    font-size: 0.9em;
   }
 }

@@ -1,11 +1,12 @@
-.productspage{
+/* Define variáveis de cores para reutilização */
+.productspage {
     --light: white;
     --dark: black;
     --text: #11091e;
     --fundo: #f4f1fb;
     --grey: grey;
-    --first: #0c1618ff;
-    --second:  #eef0fcff;
+    --first: #0d0211ff;
+    --second:  #f4f1fb;
     --third: #98c1d9ff;
     --forth: #a61c3cff;
     --fifth: #475841ff;
@@ -19,8 +20,8 @@
     --thirteenth: rgb(65, 11, 115);
 }
 
-
-.productspage{
+/* Estilos para a página de produtos */
+.productspage {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -30,10 +31,10 @@
     color: var(--light);
     height: 100%;
     width: 100%;
-    background: var(--second)
-
+    background: var(--second);
 }
 
+/* Estilos para o wrapper dos cards de produto */
 .wrapper {
     margin: 2rem;
     display: grid;
@@ -42,14 +43,17 @@
     justify-content: center;
     transition: all 0.5s ease;
 }
+
+/* Estilos para telas menores que 800px */
 @media screen and (max-width: 800px) {
     .wrapper {
-        grid-template-columns: repeat(4, minmax(10rem, 1fr)); /* Alterar para 4 colunas para telas entre 800px e 660px */
+        grid-template-columns: repeat(4, minmax(10rem, 1fr));
     }
 }
 
+/* Estilos para telas menores que 660px */
 @media screen and (max-width: 660px) {
-    .wrapper{
+    .wrapper {
         grid-template-columns: 1fr;
     }
 }

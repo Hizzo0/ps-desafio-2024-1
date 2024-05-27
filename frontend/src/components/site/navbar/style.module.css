@@ -1,3 +1,4 @@
+/* Estilos gerais da barra de navegação */
 .navbar {
   height: 60px;
   background: var(--first);
@@ -5,10 +6,16 @@
   display: flex;
   align-items: center;
   padding: 0 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Efeito de borda com sombra */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
 }
 
+/* Estilos para a barra de navegação em modo escuro */
+.navbar.darkMode {
+  background: #333;
+}
+
+/* Estilos para o conteúdo da barra de navegação */
 .navbar_nav {
   display: flex;
   max-width: 100%;
@@ -17,17 +24,20 @@
   width: 100%;
 }
 
+/* Estilos para os links de navegação */
 .nav_links {
   display: flex;
   justify-content: flex-end;
 }
 
+/* Estilos para o logotipo */
 .logo {
   height: 50px;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
 
+/* Estilos para os itens de navegação */
 .nav_item {
   height: 60px;
   display: flex;
@@ -37,22 +47,24 @@
   position: relative;
 }
 
+/* Estilos para os links nos itens de navegação */
 .nav_item > a {
   display: block;
   font-size: 18px;
-  color: var(--second); /* Branco */
+  color: var(--light);
   padding: 10px 15px;
   text-decoration: none;
   transition: color 0.3s ease;
   position: relative;
 }
 
+/* Estilos para o efeito de sublinhado nos links */
 .nav_item > a::after {
   content: '';
   position: absolute;
   width: 100%;
   height: 2px;
-  background-color: var(--second); /* Branco */
+  background-color: var(--light);
   bottom: 0;
   left: 0;
   transform: scaleX(0);
@@ -60,17 +72,31 @@
   transition: transform 0.3s ease;
 }
 
+/* Efeito de sublinhado ao passar o mouse */
 .nav_item > a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 
-.nav_item > a:hover {
-  color: var(--second); /* Cor de destaque ao passar o mouse */
-}
-
+/* Estilos para o logotipo ao passar o mouse */
 .logo:hover {
   transform: scale(1.1);
+}
+
+/* Estilos para o botão de modo escuro */
+.darkModeButton {
+  color: #fff;
+  background-color: #333;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilos para o botão de modo escuro ao passar o mouse */
+.darkModeButton:hover {
+  background-color: #555;
 }
 
 /* Responsividade */

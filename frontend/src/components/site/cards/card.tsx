@@ -9,12 +9,15 @@ import { MdOutlineExpandLess, MdExpandMore } from 'react-icons/md'
 import { TbCategory } from 'react-icons/tb'
 import { FaSortAmountUp } from 'react-icons/fa'
 import { BiSolidPurchaseTag } from 'react-icons/bi'
+import Navbar from '../navbar/navbar'
 
 interface ProductProps {
   product: productType
+  darkMode: boolean // Adicione o estado darkMode
+  toggleDarkMode: () => void // Adicione a função toggleDarkMode
 }
 
-const Card = ({ product }: ProductProps) => {
+const Card = ({ product, darkMode }: ProductProps) => {
   const [activity, setActivity] = useState<boolean>(true)
   const [buyQuantity, setBuyQuantity] = useState<number>(0)
   const [totalQuantity, setTotalQuantity] = useState<number>(product.amount)
@@ -58,7 +61,7 @@ const Card = ({ product }: ProductProps) => {
   const handleImageError = () => setImageError(true)
 
   return (
-    <div className={style.card}>
+    <div className={`${style.card} ${darkMode ? style.darkMode : ''}`}>
       <div className={style.card_img_container}>
         <img
           src={
@@ -77,7 +80,7 @@ const Card = ({ product }: ProductProps) => {
           <div className={style.category_container}>
             <TbCategory className={style.category_icon} />
             <p className={style.card_category}>
-              Categoria: {product?.category?.name}
+              Categoria: {product?.category?.name || 'Sem categoria'}
             </p>
           </div>
           <div className={style.quantity_container}>
