@@ -5,9 +5,9 @@ import { productType } from '@/types/product'
 import { useEffect, useState } from 'react'
 import Card from '@/components/site/cards/card'
 import style from '@/app/(site)/auth/sign-in/style.module.css'
-// Não pode usar
-import { toast } from '@/components/use-toast'
 import Navbar from '@/components/site/navbar/navbar'
+import Footer from '@/components/site/footer/footer'
+import DarkMode from '@/components/site/darkmode/darkmode'
 
 export default function Home() {
   const [products, setProducts] = useState<productType[] | null>(null)
@@ -16,12 +16,7 @@ export default function Home() {
     try {
       const response: productType[] | null = await api.get('/products')
       setProducts(response)
-    } catch (e) {
-      // Não pode usar
-      toast({
-        title: `${e}`,
-      })
-    }
+    } catch (e) {}
   }
 
   useEffect(() => {
@@ -30,12 +25,13 @@ export default function Home() {
 
   return (
     <div className={style.productspage}>
-      <Navbar logo="https://upload.wikimedia.org/wikipedia/pt/a/ac/CRVascodaGama.png" />
+      <Navbar logo="/images/logo3.png" />
       <div className={style.wrapper}>
         {products?.map((product: productType, index: number) => (
-          <Card product={product} />
+          <Card key={index} product={product} />
         ))}
       </div>
+      <Footer />
     </div>
   )
 }

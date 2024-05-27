@@ -1,81 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 32px;
+  padding: 16px;
+  justify-items: center;
+}
+
 .card {
-    border: 1px solid var(--second);
-    border-radius: 8px;
-    overflow: hidden;
-    background: var(--first);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-    margin: 16px;
-    cursor: pointer;
-    transition: transform 0.5s ease-in-out;
-}
-
-.card_img_container {
-    width: 100%;
-    overflow: hidden;
-}
-
-.card_img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-.card_body {
-    text-align: center;
-    padding: 16px;
-}
-
-.card_name {
-    font-size: 1.5em;
-    margin-bottom: 8px;
-}
-
-.card_category, 
-.card_amount, 
-.card_price, 
-.card_status {
-    font-size: 1em;
-    margin-bottom: 4px;
-}
-
-.card_btn {
-    margin-top: 16px;
-}
-
-.card_btn2 {
-    background-color: var(--fifth);
-    color: var(--ligth);
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.5s ease-in-out;
-}
-
-.card_btn2_disabled {
-    background-color: var(--fifth);
-    color: #aaa;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: not-allowed;
-    transition: transform 0.5s ease-in-out;
-}
-
-.card_paragraph {
-    font-size: 1em;
-    color: #666;
-}
-
-.card_img:hover {
-    transform: scale(1.1);
-}
-
-.card_btn2:hover {
-    transform: scale(1.1);
+  text-align: center;
+  border: 1px solid var(--second);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--second);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  margin: 20px;
 }
 
 .card:hover {
-    transform: scale(1.1);
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card_img_container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card_img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card_img:hover {
+  transform: scale(1.5);
+}
+
+.card_content {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.card_info {
+  margin-bottom: 16px;
+}
+
+.card_name {
+  font-weight: bold;
+  font-family: "Playfair Display", serif;
+  color: var(--forth);
+  font-size: 1.5em;
+  margin-bottom: 8px;
+}
+
+.card_category {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family: "Montserrat", sans-serif;
+  color: var(--forth);
+  font-size: 1em;
+  margin-bottom: 4px;
+}
+
+.quantity_container,
+.category_container {
+  color: var(--forth);
+  padding: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.quantity_icon,
+.category_icon {
+  color: var(--forth);
+  margin-right: 5px;
+}
+
+.buy_icon {
+  margin-top: 10px;
+}
+
+.card_price {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--forth);
+  margin-bottom: 8px;
+}
+
+.card_buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.card_buy_quantity_wrapper {
+  color: var(--forth);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.quantity_btn {
+  color: var(--forth);
+  border: none;
+  padding: 5px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 5px 0;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.quantity_btn:hover {
+  transform: scale(1.1);
+  background-color: var(--forth);
+  color: var(--second);
+}
+
+.card_btn2 {
+  background-color: var(--forth);
+  color: var(--second);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card_btn2:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+.card_btn2:hover {
+  background-color: var(--first);
+  transform: scale(1.1);
+}
+
+.buy_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.buy_icon {
+  margin-left: 5px;
+}
+
+.out_of_stock {
+  background-color: var(--forth);
+  color: var(--second);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  cursor: not-allowed;
+  width: 100%;
+}
+
+.out_of_stock:hover {
+  background-color: var(--forth);
+  transform: scale(1)
+}
+
+.out_of_stock span {
+  color: gray;
+  text-align: center;
+}
+@media (max-width: 1200px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  .card_name {
+    font-size: 1.3em;
+  }
+
+  .card_category,
+  .card_price {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 800px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
+  }
+
+  .card {
+    margin: 12px;
+  }
+
+  .card_name {
+    font-size: 1.1em;
+  }
+
+  .card_category,
+  .card_price {
+    font-size: 0.9em;
+  }
+
+  .quantity_btn {
+    padding: 4px;
+    margin: 0 3px;
+  }
+
+  .card_btn2 {
+    padding: 8px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card {
+    margin: 8px;
+  }
+
+  .card_name {
+    font-size: 1em;
+  }
+
+  .card_category,
+  .card_price {
+    font-size: 0.8em;
+  }
+
+  .quantity_btn {
+    padding: 4px;
+    margin: 0 2px;
+  }
+
+  .card_btn2 {
+    padding: 8px;
+    font-size: 0.9em;
+  }
 }
